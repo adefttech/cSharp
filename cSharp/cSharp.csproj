@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="challenge23.aspx" />
+    <Content Include="Images\epic-spies-logo.jpg" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
