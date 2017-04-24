@@ -52,9 +52,11 @@ namespace cSharp
             ViewState["Elections"] = elections;
             ViewState["Acts"] = acts;
 
+            // had to use {1:N2} to convert average to decimal.
             resultLabel.Text = string.Format("Total elections rigged: {0} <br /> Average acts of subterfuge: {1:N2}" +
                 "<br />(Last agent added: {2})", elections.Sum(), acts.Average(), agent[newIndex]);
 
+            // cleared out textboxes
             assetNameTextBox.Text = "";
             electionsRiggedTextBox.Text = "";
             subterfugePerformedTextBox.Text = "";
