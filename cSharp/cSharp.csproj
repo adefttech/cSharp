@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="challenge23.aspx" />
+    <Content Include="helperMethod.aspx" />
     <Content Include="heroMonsterGame.aspx" />
     <Content Include="Images\epic-spies-logo.jpg" />
     <Content Include="itterateArrays.aspx" />
@@ -79,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="sandBox.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +93,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="helperMethod.aspx.cs">
+      <DependentUpon>helperMethod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="helperMethod.aspx.designer.cs">
+      <DependentUpon>helperMethod.aspx</DependentUpon>
     </Compile>
     <Compile Include="heroMonsterGame.aspx.cs">
       <DependentUpon>heroMonsterGame.aspx</DependentUpon>
@@ -107,6 +116,13 @@
       <DependentUpon>itterateArrays.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sandBox.aspx.cs">
+      <DependentUpon>sandBox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sandBox.aspx.designer.cs">
+      <DependentUpon>sandBox.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
