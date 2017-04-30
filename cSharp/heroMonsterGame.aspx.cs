@@ -14,8 +14,8 @@ namespace cSharp
             //Hero vs Monster game. Each round make each stike the other
             Random random = new Random();// create a random number
             // Start with 30 health points each
-            int heroHealth = 30;
-            int monsterHealth = 30;
+            int heroHealth = 100;
+            int monsterHealth = 100;
             //empty string to hold results
             string result = "";
 
@@ -57,5 +57,41 @@ namespace cSharp
             resultLabel.Text = result;
 
         }
-    }
+
+        private void displayBattleHeader()
+        {
+            resultLabel.Text += "<h3>Battle betwee the Hero (you) and the Monster (bad guy)</h3>";
+        }
+
+        private void displayRoundHeader()
+        {
+            resultLabel.Text += "</hr><p>Round begins.....</p>";
+        }
+        private void discribeRound(string attackerName, string defenderName, int defenderHealth)
+        {
+            if(defenderHealth >= 0)
+            {
+                resultLabel.Text += string.Format(
+                    "</br>{0} attack {1} and vanquishes {2}", attackerName, defenderName, defenderName
+                    );
+            }
+            else
+            {
+                resultLabel.Text += string.Format(
+                    "</br>{0} attacks {1} leaving {2} with {3} health.", attackerName, defenderName, defenderName, defenderHealth
+                    );
+            }
+        }
+
+        private void displayResults(int heroHealth, int monsterHealth)
+        {
+            if (heroHealth <= 0)
+                resultLabel.Text += "<h3>Monster wins...</h3>";
+            else if (monsterHealth <= 0)
+                resultLabel.Text += "<h3>Hero wins...</h3>";
+            else
+                resultLabel.Text += "<h3>You're both losers</h3>";
+            
+        }
+    }    
 }
