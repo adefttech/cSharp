@@ -11,51 +11,31 @@ namespace cSharp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Hero vs Monster game. Each round make each stike the other
-            Random random = new Random();// create a random number
-            // Start with 30 health points each
             int heroHealth = 100;
             int monsterHealth = 100;
-            //empty string to hold results
-            string result = "";
+        
+            displayBattleHeader();
+            monsterHealth = performAttack(monsterHealth, 20, "Hero", "Monster");
 
-            monsterHealth -= random.Next(1, 100);
-            // setup fight initiation, hero attacks first -- gets a free lick
-            int round = 0;
-            result += "<br /> Round: " + round;
-            result += string.Format("<br />Hero attacks first, leaving the monster with {0} health.", monsterHealth);
-
-            do // this can be a WHILE loop by reversing the "Do" and "While"
+            while (heroHealth > 0 && monsterHealth > 0)
             {
-                int heroDamage = random.Next(1, 10);
-                int monsterDamage = random.Next(1, 20);
-
-                monsterHealth -= heroDamage;
-                heroHealth -= monsterDamage;
-
-                result += "<br />Round: " + ++round;
-                result += string.Format(
-                    "<br />Hero causes {0} damage leaving the monster with {1} health."
-                    , heroDamage, monsterHealth
-                    );
-                result += string.Format(
-                    "<br />Monster causes {0} damage leaving the hero with {1}"
-                    , monsterDamage, heroHealth);
-            }
-            while (heroHealth > 0 && monsterHealth > 0);
-
-
-            if(heroHealth > 0 )
-            {
-                result += string.Format("<br />Hero wins");
-            }
-            else
-            {
-                result += string.Format("<br />Monster wins");
+                displayRoundHeader();
+                heroHealth = performAttack(heroHealth, 20, "Monster", "Hero");
+                monsterHealth = performAttack(monsterHealth, 20, "Hero", "Monster");
             }
 
-            resultLabel.Text = result;
+            displayResults(heroHealth, monsterHealth);
+        }
 
+        private int performAttack(int defenderHealth,int attackerDamageMax,string attackerName,string defenderName)
+        {
+            Random random = new Random();
+            int damage = random.Next(1, attackerDamageMax);
+            defenderHealth -= damage;
+
+            describeRound(attackerName, defenderName, defenderHealth);
+
+            return defenderHealth;
         }
 
         private void displayBattleHeader()
@@ -67,7 +47,8 @@ namespace cSharp
         {
             resultLabel.Text += "</hr><p>Round begins.....</p>";
         }
-        private void discribeRound(string attackerName, string defenderName, int defenderHealth)
+
+        private void describeRound(string attackerName, string defenderName, int defenderHealth)
         {
             if(defenderHealth >= 0)
             {
