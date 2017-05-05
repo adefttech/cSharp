@@ -19,40 +19,67 @@ namespace cSharp
         //create an array with all eleven image names 
         string[] images = new string[] {"Strawberry", "Lemon", "Bar", "Bell", "Cherry", "Clover",
                   "Diamond", "Horseshoe", "Orange", "Seven", "Plum"};
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            setGame();                                            
+            if (!IsPostBack)
+                setGame();
+            else if
+                (int.Parse(playersMoneyLabel.Text) < 0)
+                return;
+            
         }
 
         protected void leverButton_Click(object sender, EventArgs e)
         {
+            string[] spinImage = new string[4];
+            string[] bet = new string[4];
+
+            setUser();
+            spinImage =  spinReel();
+            placeBet(spinImage);
+            resultLabel.Text = spinImage[0];
             
-            setUser();            
-            spinReel();           
+            
         } 
 
-        public string placeBet(string pic1, string pic2, string pic3)
+        public void placeBet(string[] spinImages)
         {
-            //1 Cherry = 1x your bet.
-            //2 Cherries = 2x's your bet. 
-            //3 Cherries = 4x's your bet.
-            //3 - 7's = JACKPOT (100 x's your bet.)
-            string prize = images[4]; 
-            string[] gamble = new string[3] { pic1, pic2, pic3 };
-            if(gamble[0] == prize || gamble[1] == prize ||  gamble[2] == prize)
+            int total = int.Parse(playersMoneyLabel.Text);
+            string seven = images[9];
+            string prize = images[4];
+            string[] swapPic =  spinImages;
+            string[] bet = new string[3];
+
+            bet[0] = userTextBox.Text;
+            bet[1] = betTextBox.Text;
+            
+            string[] result = Array.FindAll(swapPic, p => p == prize);
+           
+            if(result.Length >= 1)
             {
-                return  "won";
+                if(result.Length == 1)
+                    total = total + int.Parse(bet[1]);
+                if (result.Length == 2)
+                    total = int.Parse(bet[1]) * 2 + total;
+                if (result.Length == 3)
+                    total = int.Parse(bet[1]) * 4 + total;
+
+                playersMoneyLabel.Text = total.ToString();
+                resultLabel.Text = "You're a frickin winner!";
+               
             }
             else
             {
-                return "Keep playing...";
+                total = total - int.Parse(bet[1]);
+                playersMoneyLabel.Text = total.ToString();
+                resultLabel.Text = "You Lost! Shall you play again...";
             }
+           
         }
-        public void setUser()
+
+        private void setUser()// starts game by getting user's name and creating $100 account
         {
-            int bet = 100;
-            playersMoneyLabel.Text = bet.ToString();
             string user = userTextBox.Text;
 
             resultLabel.Text = "Hi " + user + " welcome to the Mega Casino. We've started you out with $100.";
@@ -60,35 +87,32 @@ namespace cSharp
             userNameLabel.Visible = false;
         }
 
-        public string getRandomImage()
+        public string getRandomImage()//generates a random image from the available images
         {
             int newPic = 0;
-            string newPicName = "";
-            //pull out 1 random image name and put it in a variable
-            newPic = randomImage.Next(11);
-            // here is the new variable
-            newPicName = images[newPic];
+            string newPicName = "";           
+            newPic = randomImage.Next(11); //pull out 1 random image name and put it in a variable
+            newPicName = images[newPic];// here is the new variable
+
             return newPicName;
         }
 
-        public void setGame()
+        public void setGame()// sets images to "Bars"
         {
+            int total = 100;
+            playersMoneyLabel.Text = total.ToString();
             Image1.ImageUrl = "~/mega/Images/" + images[2] + ".png";
             Image2.ImageUrl = "~/mega/Images/" + images[2] + ".png";
             Image3.ImageUrl = "~/mega/Images/" + images[2] + ".png";
         }
 
-        public string[] spinReel()
+        public string[] spinReel()//returns the 3 images and the prize (cherries)
         {
-            string prize = "";
-
-            string[] slotArray = new string[4];
-            slotArray[0] = getRandomImage();
-            slotArray[1] = getRandomImage();
-            slotArray[2] = getRandomImage();
-
-
-
+            string[] slotArray = new string[3];
+                slotArray[0] = getRandomImage();
+                slotArray[1] = getRandomImage();
+                slotArray[2] = getRandomImage();
+            
             Image1.ImageUrl = "~/mega/Images/" + slotArray[0] + ".png";
             Image2.ImageUrl = "~/mega/Images/" + slotArray[1] + ".png";
             Image3.ImageUrl = "~/mega/Images/" + slotArray[2] + ".png";
