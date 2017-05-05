@@ -9,12 +9,7 @@ namespace cSharp
 {
     public partial class megaCasino : System.Web.UI.Page
     {
-        // setUser() gives user $100 to start betting with
-        // isGameSet() checks that the images are all bars and the user has money.
-        //  placeBet() accepts users bet
-        // spinReel()  changes all 3 bar images to 3 new random images
-        // finsihBet()  evaluates new images and determines how much if any 
-        // the user has won. Displays users new balance
+
         Random randomImage = new Random();
         //create an array with all eleven image names 
         string[] images = new string[] {"Strawberry", "Lemon", "Bar", "Bell", "Cherry", "Clover",
@@ -38,9 +33,6 @@ namespace cSharp
             setUser();
             spinImage =  spinReel();
             placeBet(spinImage);
-            resultLabel.Text = spinImage[0];
-            
-            
         } 
 
         public void placeBet(string[] spinImages)
@@ -66,8 +58,7 @@ namespace cSharp
                     total = int.Parse(bet[1]) * 4 + total;
 
                 playersMoneyLabel.Text = total.ToString();
-                resultLabel.Text = "You're a frickin winner!";
-               
+                resultLabel.Text = "You're a frickin winner!";               
             }
             else
             {
