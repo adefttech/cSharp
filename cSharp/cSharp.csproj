@@ -70,7 +70,29 @@
     <Content Include="heroMonsterGame.aspx" />
     <Content Include="Images\epic-spies-logo.jpg" />
     <Content Include="itterateArrays.aspx" />
+    <Content Include="megaCasino.aspx" />
+    <Content Include="mega\Hint-About-Randomly-Choosing-Image.txt" />
+    <Content Include="mega\Hint-Managing-the-Images.txt" />
+    <Content Include="mega\Hint-Pseudo-Code-And-Method-Structure.txt" />
+    <Content Include="mega\Images\Bar.png" />
+    <Content Include="mega\Images\Bell.png" />
+    <Content Include="mega\Images\Cherry.png" />
+    <Content Include="mega\Images\Clover.png" />
+    <Content Include="mega\Images\Diamond.png" />
+    <Content Include="mega\Images\HorseShoe.png" />
+    <Content Include="mega\Images\Lemon.png" />
+    <Content Include="mega\Images\Orange.png" />
+    <Content Include="mega\Images\Plum.png" />
+    <Content Include="mega\Images\Seven.png" />
+    <Content Include="mega\Images\Strawberry.png" />
+    <Content Include="mega\Images\Watermellon.png" />
+    <Content Include="mega\initial.png" />
+    <Content Include="mega\loser.png" />
+    <Content Include="mega\webform_layout.png" />
+    <Content Include="mega\winner.png" />
     <Content Include="packages.config" />
+    <Content Include="mega\Images\Thumbs.db" />
+    <Content Include="mega\Thumbs.db" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -114,6 +136,13 @@
     </Compile>
     <Compile Include="itterateArrays.aspx.designer.cs">
       <DependentUpon>itterateArrays.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="megaCasino.aspx.cs">
+      <DependentUpon>megaCasino.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="megaCasino.aspx.designer.cs">
+      <DependentUpon>megaCasino.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sandBox.aspx.cs">
