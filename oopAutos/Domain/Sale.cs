@@ -7,8 +7,11 @@ namespace oopAutos
 {
     public class Sale
     {
-        public void sellCar() { }
         public double totalSalesAmount { get; set; }
-        public string soldBy { get; set; }
+        public Automobile Automobile { get; set; }
+        public Salesman Salesman { get; set; }
+        public Customer Customer { get; set; }
+
+        public void sellCar() { }
     }
 }

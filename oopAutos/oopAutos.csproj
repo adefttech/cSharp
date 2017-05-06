@@ -78,19 +78,19 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Automobile.cs" />
-    <Compile Include="AutomobilePersistence.cs" />
-    <Compile Include="CarLot.cs" />
-    <Compile Include="Customer.cs" />
+    <Compile Include="Domain\Automobile.cs" />
+    <Compile Include="Domain\AutomobilePersistence.cs" />
+    <Compile Include="Domain\CarLot.cs" />
+    <Compile Include="Domain\Customer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Maintenance.cs" />
-    <Compile Include="AutomobileDisplay.cs" />
-    <Compile Include="Promotion.cs" />
+    <Compile Include="Domain\Maintenance.cs" />
+    <Compile Include="Domain\AutomobileDisplay.cs" />
+    <Compile Include="Domain\Promotion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sale.cs" />
-    <Compile Include="Salesman.cs" />
+    <Compile Include="Domain\Sale.cs" />
+    <Compile Include="Domain\Salesman.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

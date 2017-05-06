@@ -7,5 +7,6 @@ namespace oopAutos
 {
     public class AutomobileDisplay
     {
+        public void printCarDetails() { }
     }
 }

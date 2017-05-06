@@ -12,9 +12,10 @@ namespace oopAutos
         public int Year { get; set; }
         public string Color { get; set; }
         public double price { get; set; }
-        public int dayOnLot { get; set; }        
+        public int daysOnLot { get; set; }        
         public double marketValue { get; set; }
         public string category { get; set; }
+        public int carLotParkingSpace { get; set; }
 
         public void determineValueOfCar() { }
         

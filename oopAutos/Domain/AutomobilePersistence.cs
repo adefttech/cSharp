@@ -9,6 +9,5 @@ namespace oopAutos
     {
         public void retreiveCarFromDatabase() { }
         public void saveCarToDatabase() { }
-
     }
 }

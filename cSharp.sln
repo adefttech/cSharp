@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cSharp", "cSharp\cSharp.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "oopAutos", "oopAutos\oopAutos.csproj", "{90F90269-2852-44B3-B992-16ABC140648E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroMonster", "HeroMonster\HeroMonster.csproj", "{7CDA825D-8230-4764-8001-DD9A628F0406}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{90F90269-2852-44B3-B992-16ABC140648E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90F90269-2852-44B3-B992-16ABC140648E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90F90269-2852-44B3-B992-16ABC140648E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CDA825D-8230-4764-8001-DD9A628F0406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CDA825D-8230-4764-8001-DD9A628F0406}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CDA825D-8230-4764-8001-DD9A628F0406}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CDA825D-8230-4764-8001-DD9A628F0406}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

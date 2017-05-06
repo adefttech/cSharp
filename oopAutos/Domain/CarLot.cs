@@ -5,9 +5,8 @@ using System.Web;
 
 namespace oopAutos
 {
-    public class Promotion
+    public class CarLot
     {
-        public string promotionalOffers { get; set; }
-        public void discountCar() { }
+        public void moveCarOnLot() { }
     }
 }

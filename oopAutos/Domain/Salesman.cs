@@ -7,5 +7,6 @@ namespace oopAutos
 {
     public class Salesman
     {
+
     }
 }

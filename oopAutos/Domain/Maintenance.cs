@@ -7,9 +7,10 @@ namespace oopAutos
 {
     public class Maintenance
     {
-        public void addToServiceHistory() { }
-        public void sendToDetailer() { }
         public bool hasBeenDetailed { get; set; }
         public string detailedServiceHistory { get; set; }
+
+        public void addToServiceHistory() { }
+        public void sendToDetailer() { }
     }
 }
