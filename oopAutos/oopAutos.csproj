@@ -8,12 +8,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{02AB8303-8830-42C0-B19F-6BF1DB7AACD2}</ProjectGuid>
+    <ProjectGuid>{90F90269-2852-44B3-B992-16ABC140648E}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>cSharp</RootNamespace>
-    <AssemblyName>cSharp</AssemblyName>
+    <RootNamespace>oopAutos</RootNamespace>
+    <AssemblyName>oopAutos</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -65,35 +65,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="challenge23.aspx" />
-    <Content Include="helperMethod.aspx" />
-    <Content Include="heroMonsterGame.aspx" />
-    <Content Include="Images\epic-spies-logo.jpg" />
-    <Content Include="itterateArrays.aspx" />
-    <Content Include="megaCasino.aspx" />
-    <Content Include="mega\Hint-About-Randomly-Choosing-Image.txt" />
-    <Content Include="mega\Hint-Managing-the-Images.txt" />
-    <Content Include="mega\Hint-Pseudo-Code-And-Method-Structure.txt" />
-    <Content Include="mega\Images\Bar.png" />
-    <Content Include="mega\Images\Bell.png" />
-    <Content Include="mega\Images\Cherry.png" />
-    <Content Include="mega\Images\Clover.png" />
-    <Content Include="mega\Images\Diamond.png" />
-    <Content Include="mega\Images\HorseShoe.png" />
-    <Content Include="mega\Images\Lemon.png" />
-    <Content Include="mega\Images\Orange.png" />
-    <Content Include="mega\Images\Plum.png" />
-    <Content Include="mega\Images\Seven.png" />
-    <Content Include="mega\Images\Strawberry.png" />
-    <Content Include="mega\Images\Watermellon.png" />
-    <Content Include="mega\initial.png" />
-    <Content Include="mega\loser.png" />
-    <Content Include="mega\webform_layout.png" />
-    <Content Include="mega\winner.png" />
-    <Content Include="oop.aspx" />
     <Content Include="packages.config" />
-    <Content Include="mega\Images\Thumbs.db" />
-    <Content Include="mega\Thumbs.db" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -103,65 +75,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="sandBox.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Automobile.cs" />
-    <Compile Include="Car.cs" />
-    <Compile Include="challenge23.aspx.cs">
-      <DependentUpon>challenge23.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="challenge23.aspx.designer.cs">
-      <DependentUpon>challenge23.aspx</DependentUpon>
-    </Compile>
+    <Compile Include="AutomobilePersistence.cs" />
+    <Compile Include="CarLot.cs" />
+    <Compile Include="Customer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="helperMethod.aspx.cs">
-      <DependentUpon>helperMethod.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="helperMethod.aspx.designer.cs">
-      <DependentUpon>helperMethod.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="heroMonsterGame.aspx.cs">
-      <DependentUpon>heroMonsterGame.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="heroMonsterGame.aspx.designer.cs">
-      <DependentUpon>heroMonsterGame.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="itterateArrays.aspx.cs">
-      <DependentUpon>itterateArrays.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="itterateArrays.aspx.designer.cs">
-      <DependentUpon>itterateArrays.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="megaCasino.aspx.cs">
-      <DependentUpon>megaCasino.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="megaCasino.aspx.designer.cs">
-      <DependentUpon>megaCasino.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="oop.aspx.cs">
-      <DependentUpon>oop.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="oop.aspx.designer.cs">
-      <DependentUpon>oop.aspx</DependentUpon>
-    </Compile>
+    <Compile Include="Maintenance.cs" />
+    <Compile Include="AutomobileDisplay.cs" />
+    <Compile Include="Promotion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sandBox.aspx.cs">
-      <DependentUpon>sandBox.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="sandBox.aspx.designer.cs">
-      <DependentUpon>sandBox.aspx</DependentUpon>
-    </Compile>
+    <Compile Include="Sale.cs" />
+    <Compile Include="Salesman.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -180,9 +109,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50514</DevelopmentServerPort>
+          <DevelopmentServerPort>51906</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50514/</IISUrl>
+          <IISUrl>http://localhost:51906/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
